@@ -52,17 +52,78 @@ six retrospective validation datasets.*
 
 **End-to-end AI-assisted screening platform** · Private repository
 
-JARVIS-UI is the Django application that turns the JARVIS screening method into
-a complete reviewer workflow. It supports reference import and deduplication,
-LLM assessment against review-specific eligibility criteria, independent human
-screening, conflict management, and active-learning prioritisation.
+JARVIS-UI aims to reduce the manual burden of title-and-abstract screening
+without transferring final eligibility decisions to an opaque automated
+system. It turns the JARVIS method into an end-to-end review workspace in which
+research teams can import search results, resolve duplicate citations, define
+review-specific PICOS criteria, obtain structured LLM assessments, screen a
+human-labelled sample, and use active learning to prioritise the records most
+likely to be relevant.
 
-The platform brings automated assessment and reviewer decisions together in a
-single interface. It is designed to keep humans in control of eligibility
-decisions while using model outputs and continuously updated predictions to
-focus screening effort where it is most useful.
+Human reviewers retain control throughout the process. The interface connects
+source files, duplicate decisions, PICOS prompts and outputs, screening
+decisions, model predictions, stopping-rule information, and subsequent
+prioritised batches in a single traceable workflow. This allows automation to
+direct reviewer attention while preserving the information needed to inspect,
+challenge, or reproduce each stage.
 
 `Python` · `Django` · `LLM integration` · `active learning` · `reference screening`
+
+#### Interface walkthrough
+
+![JARVIS-UI review overview showing imported records, active studies, duplicate groups, screening decisions, AI coding, and model predictions](assets/screenshots/jarvis-ui/jarvis-ui-review-overview.png)
+
+*Figure 1. Main review workspace after an active-learning model has been
+trained. The overview reports one uploaded search file, 524 parsed references,
+118 duplicate groups, 379 active and AI-coded studies, 30 human screening
+decisions, and 197 model predictions. The guided pipeline and filterable study
+library keep the current workflow state, record provenance, and next available
+actions visible from one screen.*
+
+![JARVIS-UI reference import screen](assets/screenshots/jarvis-ui/jarvis-ui-import-references.png)
+
+*Figure 2. Reference import and source-file tracking. Reviewers can add RIS,
+NBIB, text, or CSV exports from bibliographic databases and then start parsing
+as a separate, explicit step. The source filename, processing status, and
+checksum remain visible after import, providing an audit trail from the
+original search export to the records in the review library.*
+
+![Animated JARVIS-UI deduplication workflow moving from the duplicate overview into an individual duplicate group](assets/screenshots/jarvis-ui/jarvis-ui-dedup-workflow.gif)
+
+*Figure 3. Deduplication overview and record-level resolution. The first frame
+shows a completed run in which all 524 references were assessed and all 118
+candidate groups were resolved, with the detection method and resolution source
+retained for every group. The second frame opens a four-record fuzzy-match
+group: reviewers can compare citation metadata, abstracts, similarity measures,
+and matching evidence before selecting the canonical record or records to keep.
+Green and red states distinguish retained and discarded representations.*
+
+![JARVIS-UI PICOS configuration and completed local LLM coding run](assets/screenshots/jarvis-ui/jarvis-ui-llm-coding.png)
+
+*Figure 4. Review-specific PICOS configuration and completed local LLM coding.
+The latest run processed 374 records, while 379 active records have
+completed stored results overall, with no records remaining and no recorded
+errors. Reviewers can inspect and revise the review aim and each eligibility
+domain, see the exact system prompt supplied to the model, confirm the selected
+model and run scope, and examine the resulting record-level PICOS assessments.
+The available API-based options are OpenAI GPT-5.4, GPT-5.4 mini, GPT-5,
+GPT-5 mini, GPT-4.1, GPT-4.1 mini, GPT-4o, and GPT-4o mini; these require an
+OpenAI API key and send the title, abstract, and review-specific prompt to the
+OpenAI service. Alternatively, Qwen3.5 9B 8-bit runs locally through MLX on an
+Apple Silicon Mac, keeping inference and document content on the researcher's
+machine. The screenshot shows this local Qwen workflow.*
+
+![Animated JARVIS-UI screening and prioritisation workflow moving from a completed human batch to the model summary](assets/screenshots/jarvis-ui/jarvis-ui-screening-prioritisation.gif)
+
+*Figure 5. Human screening followed by active-learning prioritisation. The
+first frame shows the completed 30-record human screening batch, including the
+current citation, full abstract, saved decision, and batch progress. The second
+frame shows the trained model summary: 197 records remain, the operating
+threshold is 0.40, the stopping rule has been reached, and the prediction
+histogram explains how the unscreened library is distributed around that
+threshold. The colour-coded reference table distinguishes human decisions from
+JARVIS-only predictions, while the next action creates a new batch containing
+the 30 highest-priority records.*
 
 ### [CEREBRO](https://github.com/gabsbarreto/CEREBRO)
 
