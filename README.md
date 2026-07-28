@@ -1,44 +1,211 @@
-# Resume/Portfolio
-## Name and title
-Gabriel H. C. Barreto, RD, PhD
+# Gabriel Barreto, PhD
 
-[See my projects](https://github.com/gabsbarreto/portfolio1/blob/main/README.md#data-science-jobs-and-projects)
+### Evidence synthesis · Research software · AI-assisted review methods
 
-## Profile
-I am a **curious** and **inovative** individual, passionate about data and scientific research. With a background in nutrition and dietetics, my interests are sports nutrition, exercise, and health promotion. I was lucky enough to join a highly creative and collaborative research group during my **PhD degree in Musculoskeletal System Sciences**, having co-published with multiple researchers across the globe. Due to that, I have reached the mark of **21 manuscripts published**. My passion for data has led me to pursue an **MBA in Data Science and Analytics** one year prior to my PhD viva. Now, I am looking forward to starting a career in Data Science and Analytics in research.
+[Google Scholar](https://scholar.google.com/citations?user=do8mcsEAAAAJ&hl=en) ·
+[ResearchGate](https://www.researchgate.net/profile/Gabriel-Henrique-Barreto)
+
+I am an evidence-synthesis researcher and research-software developer based in
+the United Kingdom. I currently work as a **Senior Research Associate in
+Evidence Synthesis at the University of Bristol**, where I conduct
+policy-relevant systematic reviews and develop digital tools that make review
+workflows more efficient, transparent, and reproducible.
+
+My work sits at the intersection of **systematic review methodology, software
+development, and applied AI**. I combine first-hand experience in evidence
+synthesis with Python, R, statistical evaluation, and user-centred development
+to turn recurring research problems into practical tools.
+
+I hold a **PhD in Musculoskeletal System Sciences** and an **MBA in Data Science
+and Analytics**, and I have authored more than 20 peer-reviewed publications.
+
+## Selected research software
+
+### [JARVIS](https://github.com/gabsbarreto/JARVIS-R)
+
+**AI-assisted systematic-review screening and active learning**
+
+JARVIS combines LLM-based assessment of PICOS criteria, title and abstract
+information, and active learning to prioritise records during study screening.
+I conceptualised and developed the method, evaluated it retrospectively across
+six completed systematic reviews, and examined both workload reduction and the
+safety implications of incorrectly excluded studies.
+
+The public repository contains the R-based evaluation and simulation framework.
+It includes feature engineering, iterative H2O deep-learning screening loops,
+hyperparameter experiments, and measures of recall, screening burden, and work
+saved.
+
+`R` · `H2O` · `active learning` · `LLM evaluation` · `systematic reviews`
+
+[Validation preprint · DOI: 10.64898/2026.04.08.26350384](https://doi.org/10.64898/2026.04.08.26350384)
+
+#### Validation performance
+
+![JARVIS validation performance across six completed systematic reviews, based on Figure 8 of the preprint](assets/screenshots/jarvis/jarvis-figure-8-performance.png)
+
+*Figure 8 tracks records identified, within-iteration recall, joint
+JARVIS–reviewer recall, and specificity as human screening progresses across
+six retrospective validation datasets.*
+
+### JARVIS-UI
+
+**End-to-end AI-assisted screening platform** · Private repository
+
+JARVIS-UI is the Django application that turns the JARVIS screening method into
+a complete reviewer workflow. It supports reference import and deduplication,
+LLM assessment against review-specific eligibility criteria, independent human
+screening, conflict management, and active-learning prioritisation.
+
+The platform brings automated assessment and reviewer decisions together in a
+single interface. It is designed to keep humans in control of eligibility
+decisions while using model outputs and continuously updated predictions to
+focus screening effort where it is most useful.
+
+`Python` · `Django` · `LLM integration` · `active learning` · `reference screening`
+
+### [CEREBRO](https://github.com/gabsbarreto/CEREBRO)
+
+**AI-assisted structured data extraction from scientific documents**
+
+CEREBRO is a FastAPI application for extracting structured information from
+scientific PDFs, spreadsheets, and text records. It supports local OCR and
+language-model workflows as well as direct PDF analysis through OpenAI.
+Reviewers can define extraction questions and rules, manage processing queues,
+retry failed jobs, inspect outputs, and export structured results to Excel.
+
+I developed CEREBRO and applied it within a major programme of linked
+systematic reviews, comparing its outputs with human reference data.
+
+`Python` · `FastAPI` · `OCR` · `OpenAI API` · `structured extraction`
+
+#### Interface preview
+
+![CEREBRO PDF extraction console configured with a synthetic systematic-review prompt](assets/screenshots/cerebro/cerebro-extraction-console.png)
+
+*PDF extraction console showing CEREBRO's upload, routing, OCR, and prompt
+workflow.*
+
+![CEREBRO structured extraction workbook populated with synthetic trial records](assets/screenshots/cerebro/cerebro-structured-schema.png)
+
+*Structured workbook showing a configurable extraction schema and synthetic
+trial-level results. No production research data is shown.*
+
+### [TranslaTHOR](https://github.com/gabsbarreto/TranslaTHOR)
+
+**Local-first translation for multilingual full-text screening**
+
+TranslaTHOR is a local application for translating digital and scanned
+scientific PDFs into English. It detects document type, combines
+layout-sensitive extraction and OCR, and uses local Qwen models to produce
+traceable translated outputs while preserving tables, figures, and document
+structure where possible.
+
+I developed the tool to support multilingual full-text screening without
+requiring research documents to be sent to an external translation service.
+
+`Python` · `FastAPI` · `OCR/VLM pipelines` · `Qwen` · `local AI`
+
+#### Interface preview
+
+![TranslaTHOR local PDF translation dashboard showing a completed job](assets/screenshots/translathor/translathor-interface.png)
+
+*The local dashboard supports PDF upload and provides both readable and
+original-layout downloads when a translation is complete.*
+
+![Expanded TranslaTHOR job record showing warnings, settings, and reconstruction status](assets/screenshots/translathor/translathor-completed-result.png)
+
+*Each run retains its configuration, processing details, validation warnings,
+and original-layout reconstruction status for inspection.*
+
+#### Translation comparison
+
+![Animated comparison of Table 2 in the German source, translated original layout, and translated readable layout](assets/screenshots/translathor/translathor-table-2-layouts.gif)
+
+*Table 2 from a completed translation, shown as the original German source,
+the English translation reconstructed in the source layout, and the reflowed
+readable English output.*
+
+## Expertise
+
+| Area | Methods and technologies |
+| --- | --- |
+| Evidence synthesis | Systematic and scoping reviews, screening, structured extraction, RoB 2, ROBINS-I, ROBINS-E, meta-analysis, GRADE, PRISMA |
+| Research software | Python, R, SQL, Django, FastAPI, PostgreSQL, Celery/Redis, Docker, Git/GitHub |
+| AI and evaluation | LLM integration, OCR/VLM pipelines, local MLX/Qwen models, active learning, human-reference validation, error analysis |
+| Quantitative methods | Statistical modelling, machine learning, meta-regression, reproducible analysis, survey-weighted methods |
+| Product development | Requirements gathering, workflow mapping, prompt and schema design, prototyping, testing, documentation, iterative refinement |
+
+## Experience
+
+**Senior Research Associate in Evidence Synthesis**<br>
+University of Bristol · June 2025–present
+
+- Conduct end-to-end systematic reviews addressing health and social-care
+  policy questions.
+- Develop and evaluate software for AI-assisted screening, multilingual
+  full-text processing, and structured data extraction.
+- Maintain and deploy research applications within university infrastructure.
+
+**Doctoral Researcher and Research Collaborator**<br>
+University of São Paulo · October 2018–September 2024
+
+- Led and contributed to systematic reviews and meta-analyses with
+  international research teams.
+- Coordinated reviewers and performed searching, extraction, critical
+  appraisal, GRADE assessment, statistical synthesis, and meta-regression.
+- Designed human studies and built automated data-processing and statistical
+  workflows in R.
 
 ## Education
-#### MBA in Data Science and Analytics - Oct/2023 - ECD: Apr/2025  
-*"Coffee and caffeine consumption on markers of insulin sensitivity and cardiovascular health in the NHANES 2007-2016 datasets: a populational study."*
-#### Direct PhD in Skeletal Muscle Systems Science - Oct/2018 - Sep/2024
-*"CYP1A2 genotypes and the physiological and acute effects of caffeine supplementation."*
-#### Bachelor's degree in Nutrition and Dietetics - Feb/2008 - Dec/2012
-*"Preoperative fasting: the role of the dietitian in a nutritional therapy multidisciplinary team."* 
 
-## Publications
-### Five most recent peer-reviewed publications (out of 21)
-1.	Merola, K.P, Cardoso, M. C., **Barreto, G.**, Chagas, M. C., Saunders, L.F., Saunders, B., Berton, D. C.,  *Virtual Reality High-Intensity Interval Training is a Viable Alternative to Traditional Exercise.* <ins>JMIR Serious Games<ins>, Oct 2024. 
-2.	Curran-Bowen, T., da Silva, A. G., **Barreto, G.**, Buckley, J., and Saunders, B., *Sodium bicarbonate and beta-alanine supplementation: Is combining both better than either alone? A systematic review and meta-analysis.* <ins>Biology of Sport<ins>, 2024. 41(3): p. 79-87.
-3.	Gavel, E. H., **Barreto, G.**, Hawke, K. V., Stellingwerff, T., James, L. J., Saunders, B., and Logan-Sprenger, H. M., *How cool is that? The effects of menthol mouth rinsing on exercise capacity and performance: a systematic review and meta-analysis.* <ins>Sports Medicine-Open<ins>, 2024. 10(1): p. 18.
-4.	Silva de Souza, R. A., **Barreto, G.**, Alves Freire, P. A., de Abreu, W. C., Saunders, B., and da Silva, S. F., *Sodium bicarbonate improved CrossFit® Benchmark Fran, but not subsequent 500 m rowing performance.* <ins>Research in Sports Medicine<ins>, 2024: p. 1-16.
-5.	**Barreto, G.**, Esteves, G. P., Marticorena, F., Oliveira, T. N., Grgic, J., and Saunders, B., *Caffeine, CYP1A2 Genotype and Exercise Performance: A Systematic Review and Meta-analysis.* <ins>Medicine and Science in Sports and Exercise<ins>, 2023.
+- **MBA in Data Science and Analytics**, University of São Paulo, 2025<br>
+  Capstone: *The association between caffeine consumption and biomarkers of
+  cardiovascular and metabolic health.*
+- **Direct PhD in Musculoskeletal System Sciences**, University of São Paulo,
+  2024<br>
+  Thesis: *CYP1A2 genotypes on the physiological responses to caffeine in
+  humans.*
+- **International Research Internship**, Edge Hill University, 2023<br>
+  Project: *CYP1A2, caffeine and sports performance: just a matter of timing?*
+- **Bachelor's degree in Nutrition and Dietetics**, São Camilo University
+  Centre, 2013
 
-### Five most recent conference abstracts (out of 13)
-1.	Saunders., B., McNaughton, L., **Barreto, G.**, *Caffeine And Sports Performance: Just A Matter Of Timing? A Pilot Study.* Accepted at the <ins>American College of Sports Medicine Annual Meeting 2024<ins>, Boston Massachussets, USA.
-2.	Souza, L. K. F., Oliveira, T. N., **Barreto, G.**; Silva de Souza, R. A., Marticorena, F., et al. *Sodium Bicarbonate Supplementation on the Jiu-jitsu Anaerobic Performance Test in Brazilian Jiu-jitsu Fighters.* Accepted at <ins>American College of Sports Medicine Annual Meeting 2024<ins>, Boston, Massachussets, USA
-3.	**Barreto, G.**, Esteves, G. P., Marticorena, F., Oliveira, T. N., Grgic, J., and Saunders, B., *Caffeine And CYP1A2 In Sports: A Systematic Review And Meta-analysis.* <ins>American College of Sports Medicine Annual Meeting 2023<ins>, Denver, Colorado, USA. doi: 10.1249/01.mss.0000987056.48087.df
-4.	Marticorena, F. M., Carvalho, A., Grecco, B. H., **Barreto, G.**, and Saunders, B., *No Influence Of Habitual Caffeine Consumption On Its Ergogenic Effects: A Systematic Review And Meta-analysis.* <ins>American College of Sports Medicine Annual Meeting 2022<ins>, San Diego, California, USA. doi: 10.1249/01.mss.0000876488.52846.a3
-5.	**Barreto, G.**, Loureiro, L., Reis, C., and Saunders, B., *Effects of caffeine chewing gum supplementation on exercise performance: A systematic review and meta-analysis.* <ins>American College of Sports Medicine Annual Meeting 2022<ins>, San Diego, California, USA. doi: 10.1249/01.mss.0000876484.44136.27
+## Selected research outputs
 
-   
+1. Barreto, G., et al. (2026). *JARVIS, should this study be selected for
+   full-text screening? Performance of a Joint AI-ReViewer Interactive
+   Screening tool for systematic reviews.* medRxiv preprint.
+   [doi:10.64898/2026.04.08.26350384](https://doi.org/10.64898/2026.04.08.26350384).
+2. Curran-Bowen, T., da Silva, A. G., Barreto, G., Buckley, J., & Saunders, B.
+   (2024). Sodium bicarbonate and beta-alanine supplementation: Is combining
+   both better than either alone? *Biology of Sport, 41*(3), 79–87.
+3. Gavel, E. H., Barreto, G., et al. (2024). How cool is that? The effects of
+   menthol mouth rinsing on exercise capacity and performance: a systematic
+   review and meta-analysis. *Sports Medicine–Open, 10*, 18.
+4. Barreto, G., Esteves, G. P., Marticorena, F., Oliveira, T. N., Grgic, J., &
+   Saunders, B. (2023). Caffeine, CYP1A2 genotype and exercise performance: a
+   systematic review and meta-analysis. *Medicine & Science in Sports &
+   Exercise*.
+5. Barreto, G., Loureiro, L., Reis, C., & Saunders, B. (2023). Effects of
+   caffeine chewing gum supplementation on exercise performance: a systematic
+   review and meta-analysis. *European Journal of Sport Science, 23*(5),
+   714–725.
+6. Esteves, G. P., Barreto, G., Longhini, F., Dolan, E., & Benatti, F. B.
+   (2023). The influence of n-3 PUFA supplementation on muscle strength, mass
+   and function: a systematic review and meta-analysis. *Advances in Nutrition,
+   14*(1), 115–127.
 
-**See all my publications:** [ResearchGate](https://www.researchgate.net/profile/Gabriel-Henrique-Barreto)    /    [Google Scholar](https://scholar.google.com/citations?user=do8mcsEAAAAJ&hl=pt-BR&oi=sra)
+[View my complete publication record on Google Scholar](https://scholar.google.com/citations?user=do8mcsEAAAAJ&hl=en).
 
-## Data Science Jobs and Projects
+## Recognition
 
+- Three competitive São Paulo Research Foundation (FAPESP) awards supporting
+  postgraduate research and an international research internship.
+- ACSM International Student Award, American College of Sports Medicine Annual
+  Meeting, 2023.
+- Best Poster Award, University of São Paulo Research Symposium, 2018.
 
- |Title  | Features|
-|:-------:|:---------:|
-|[Predicting running and cycling time during an IronMan<br>competition based on running and cycling efficiency <br>throughout a training season.]()|- Organising data for analysis. <br>- Data exploration and cleaning <br>-  |
-|[Is caffeine consumption associated with better glucose <br>tolerance in the USA population: NHANES](https://github.com/gabsbarreto/portfolio1/blob/main/NHANES%20project/NHANES-Git.md) |- Obtained data from NHANES with an API ('nhanesA')<br>- Cleaned and organised data with 'dplyr'. <br>- Used openAI's GPT API to categorise participants<br>- Weighted polynomial GLM with the 'survey' package <br> |
+## Languages
 
+Brazilian Portuguese (native) · English (fluent, C1) · Spanish (advanced)
