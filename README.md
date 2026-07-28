@@ -44,9 +44,11 @@ saved.
 
 ![JARVIS validation performance across six completed systematic reviews, based on Figure 8 of the preprint](assets/screenshots/jarvis/jarvis-figure-8-performance.png)
 
-*Figure 8 tracks records identified, within-iteration recall, joint
-JARVIS–reviewer recall, and specificity as human screening progresses across
-six retrospective validation datasets.*
+*Figure 1. JARVIS validation performance across six completed systematic
+reviews. The source figure (Figure 8 of the validation preprint) tracks records
+identified, within-iteration recall, joint JARVIS–reviewer recall, and
+specificity as human screening progresses across the six retrospective
+datasets.*
 
 ### JARVIS-UI
 
@@ -73,7 +75,7 @@ challenge, or reproduce each stage.
 
 ![JARVIS-UI review overview showing imported records, active studies, duplicate groups, screening decisions, AI coding, and model predictions](assets/screenshots/jarvis-ui/jarvis-ui-review-overview.png)
 
-*Figure 1. Main review workspace after an active-learning model has been
+*Figure 2. Main review workspace after an active-learning model has been
 trained. The overview reports one uploaded search file, 524 parsed references,
 118 duplicate groups, 379 active and AI-coded studies, 30 human screening
 decisions, and 197 model predictions. The guided pipeline and filterable study
@@ -82,7 +84,7 @@ actions visible from one screen.*
 
 ![JARVIS-UI reference import screen](assets/screenshots/jarvis-ui/jarvis-ui-import-references.png)
 
-*Figure 2. Reference import and source-file tracking. Reviewers can add RIS,
+*Figure 3. Reference import and source-file tracking. Reviewers can add RIS,
 NBIB, text, or CSV exports from bibliographic databases and then start parsing
 as a separate, explicit step. The source filename, processing status, and
 checksum remain visible after import, providing an audit trail from the
@@ -90,7 +92,7 @@ original search export to the records in the review library.*
 
 ![Animated JARVIS-UI deduplication workflow moving from the duplicate overview into an individual duplicate group](assets/screenshots/jarvis-ui/jarvis-ui-dedup-workflow.gif)
 
-*Figure 3. Deduplication overview and record-level resolution. The first frame
+*Figure 4. Deduplication overview and record-level resolution. The first frame
 shows a completed run in which all 524 references were assessed and all 118
 candidate groups were resolved, with the detection method and resolution source
 retained for every group. The second frame opens a four-record fuzzy-match
@@ -100,7 +102,7 @@ Green and red states distinguish retained and discarded representations.*
 
 ![JARVIS-UI PICOS configuration and completed local LLM coding run](assets/screenshots/jarvis-ui/jarvis-ui-llm-coding.png)
 
-*Figure 4. Review-specific PICOS configuration and completed local LLM coding.
+*Figure 5. Review-specific PICOS configuration and completed local LLM coding.
 The latest run processed 374 records, while 379 active records have
 completed stored results overall, with no records remaining and no recorded
 errors. Reviewers can inspect and revise the review aim and each eligibility
@@ -115,7 +117,7 @@ machine. The screenshot shows this local Qwen workflow.*
 
 ![Animated JARVIS-UI screening and prioritisation workflow moving from a completed human batch to the model summary](assets/screenshots/jarvis-ui/jarvis-ui-screening-prioritisation.gif)
 
-*Figure 5. Human screening followed by active-learning prioritisation. The
+*Figure 6. Human screening followed by active-learning prioritisation. The
 first frame shows the completed 30-record human screening batch, including the
 current citation, full abstract, saved decision, and batch progress. The second
 frame shows the trained model summary: 197 records remain, the operating
@@ -144,13 +146,13 @@ systematic reviews, comparing its outputs with human reference data.
 
 ![CEREBRO PDF extraction console configured with a synthetic systematic-review prompt](assets/screenshots/cerebro/cerebro-extraction-console.png)
 
-*PDF extraction console showing CEREBRO's upload, routing, OCR, and prompt
-workflow.*
+*Figure 7. PDF extraction console showing CEREBRO's upload, routing, OCR, and
+prompt workflow.*
 
 ![CEREBRO structured extraction workbook populated with synthetic trial records](assets/screenshots/cerebro/cerebro-structured-schema.png)
 
-*Structured workbook showing a configurable extraction schema and synthetic
-trial-level results. No production research data is shown.*
+*Figure 8. Structured workbook showing a configurable extraction schema and
+synthetic trial-level results. No production research data is shown.*
 
 ### [TranslaTHOR](https://github.com/gabsbarreto/TranslaTHOR)
 
@@ -171,21 +173,21 @@ requiring research documents to be sent to an external translation service.
 
 ![TranslaTHOR local PDF translation dashboard showing a completed job](assets/screenshots/translathor/translathor-interface.png)
 
-*The local dashboard supports PDF upload and provides both readable and
-original-layout downloads when a translation is complete.*
+*Figure 9. The local dashboard supports PDF upload and provides both readable
+and original-layout downloads when a translation is complete.*
 
 ![Expanded TranslaTHOR job record showing warnings, settings, and reconstruction status](assets/screenshots/translathor/translathor-completed-result.png)
 
-*Each run retains its configuration, processing details, validation warnings,
-and original-layout reconstruction status for inspection.*
+*Figure 10. Each run retains its configuration, processing details, validation
+warnings, and original-layout reconstruction status for inspection.*
 
 #### Translation comparison
 
 ![Animated comparison of Table 2 in the German source, translated original layout, and translated readable layout](assets/screenshots/translathor/translathor-table-2-layouts.gif)
 
-*Table 2 from a completed translation, shown as the original German source,
-the English translation reconstructed in the source layout, and the reflowed
-readable English output.*
+*Figure 11. Table 2 from a completed translation, shown as the original German
+source, the English translation reconstructed in the source layout, and the
+reflowed readable English output.*
 
 ## Expertise
 
